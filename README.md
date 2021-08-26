@@ -95,3 +95,25 @@ En el lenguaje de C# existen diferentes tipos de operadores, se encuentran los A
 
 Hay más de 40 operadores, la mayoría de ellos son combinaciones de tipos más básicos. [Todos los operadores](https://docs.microsoft.com/es-es/dotnet/csharp/language-reference/operators/)
 
+# Colecciones vs arreglos
+> "Los arreglos son mucho más rápidos para trabajar en memoria, consumen menos memoria, si se utilizan tipos nativos son mucho más eficientes y son ideales para trabajar con APIS de bajo nivel.
+Por otro lado, las colecciones son más fáciles de manipular, tienen múltiples variantes y, especializaciones para cada tarea, los tamaños son flexibles y las colecciones son extensibles y personalizables.
+
+Hay muchos tipos de colecciones:
+
+- Simple: manipulan todo como tipos `Object`; algunos ejemplos son el `ArrayList`, `BitArray`, `Queue`, `Stack` y `Sorted`.
+- Especializadas: son diseñadas para manejar un tipo de dato especifico; algunos ejemplos son, `StringCollection`, `BitVector`, `ListDictionary` y `NameValueCollection`.
+- Genéricas: son las más usadas hoy en día, algunos ejemplos son: `Dictionary<T,K>`, `List<T>`, `Queue<T>`, `Stack<T>`, `HashSet<T>` y `SortedSet<T>`.
+- Concurrentes: son diseñadas para el acceso concurrente; algunos ejemplos son: `ConcurrentBad<T>`, `ConcurrentStack<T>` y `ConcurrentQueue<T>`.
+
+Si quieres ver más tipos de colecciones que hay en C# visita el siguiente [enlace](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/collections).
+
+# Implementando colecciones
+Para añadir un nuevo objeto a la colección usaremos el método `Add`, si queremos añadir un conjunto de objetos en forma de colección podemos hacerlo mediante el método `AddRange` y para remover todos los miembros de la colección usamos el método `Clear`.
+
+# Removiendo y buscando objetos en colecciones
+Para eliminar un objeto especifico de una colección podemos hacerlo mediante referencia que es pasándole al método Remove la variable del objeto a eliminar, o también indicando el índice del objeto que queremos eliminar con el método RemoveAt.
+
+El método RemoveAll pide como parámetro un Predicate el cual es una función que solamente va a regresar valores Bool y se va a ejecutar en cada elemento de la colección, de igual forma la función va a recibir como parámetro un elemento de la colección y en caso de que la condición regrese un valor de true entonces el objeto se va a borrar.
+
+
