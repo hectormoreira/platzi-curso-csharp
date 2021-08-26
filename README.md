@@ -48,3 +48,13 @@ Para definir una clase tenemos que usar la palabra reservada “class” antes d
 Para crear una nueva instancia de una clase debemos crear una variable y asignarle la palabra reservada “new” seguido del nombre de la clase.
 
 Cada cosa definida dentro de una clase tiene un nivel de acceso, por defecto el nivel de acceso es privado o protegido y esto significa que no pueden modificar o acceder a ese atributo. Para poder acceder por fuera de la clase se debe asignar el nivel de acceso publico con la palabra reservada “public”.
+
+# Proyecto: CorEscuela
+
+CorEscuela debe ser capaz de:
+
+- Administrar una escuela pequeña.
+- Manejar los alumnos de cada grado.
+- Controlar sus asignaturas.
+- Controlar sus evaluaciones.
+- Elaborar informes.
