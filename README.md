@@ -58,3 +58,40 @@ CorEscuela debe ser capaz de:
 - Controlar sus asignaturas.
 - Controlar sus evaluaciones.
 - Elaborar informes.
+
+# Formas de recorrer arreglos
+Además de recorrer un arreglo con la sentencia `while` podemos encontrar:
+
+- La sentencia `do while` donde a diferencia de while se va a ejecutar primero el código y luego va a verificar si la condición es válida.
+- La sentencia `for`.
+- La sentencia `foreach`.
+
+# Inicializando arreglos y mejorando impresión
+Es importante tener un código compacto siempre y cuando este favorezca la legibilidad del código.
+
+Añadiendo al inicio de nuestro archivo la línea:
+
+```c#
+using static System.Console
+```
+
+Podremos escribir solo WriteLine cuando vayamos a imprimir algo en consola.
+
+
+# Condiciones
+El operador if nos indica si se cumple o no una condición, si la condición se cumple entonces ejecuta el bloque de código, en caso de no cumplirse no se ejecuta. La sentencia else se ejecuta cuando un if no se cumple y la sentencia else if lo que hace es en caso de no cumplirse un if, pregunta por una nueva condición.
+
+Existen diferentes operadores que resultan útiles para verificar condicionales, algunos de ellos son:
+
+
+- `||` o or.
+- `&&` o and.
+- `>` mayor que.
+- `<` menor que.
+- `%` operador MOD, retorna el residuo de una división.
+
+# Operadores en C#
+En el lenguaje de C# existen diferentes tipos de operadores, se encuentran los Aritméticos, Lógicos, Binarios y algunos por palabras clave.
+
+Hay más de 40 operadores, la mayoría de ellos son combinaciones de tipos más básicos. [Todos los operadores](https://docs.microsoft.com/es-es/dotnet/csharp/language-reference/operators/)
+
