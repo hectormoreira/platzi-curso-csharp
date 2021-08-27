@@ -116,4 +116,22 @@ Para eliminar un objeto especifico de una colección podemos hacerlo mediante re
 
 El método RemoveAll pide como parámetro un Predicate el cual es una función que solamente va a regresar valores Bool y se va a ejecutar en cada elemento de la colección, de igual forma la función va a recibir como parámetro un elemento de la colección y en caso de que la condición regrese un valor de true entonces el objeto se va a borrar.
 
+# Expresiones lambda y delegados
+> Una expresión lambda es una función anónima que puedes usar para crear delegados, son bastante útiles pues tu código queda de forma más compacta, pero solamente si esta función se utilizara en un solo lugar.
+
+En C# puedes comentar de distintas formas:
+
+- Con `//` para comentar una sola línea.
+- Con `/*` y `*/` para comentar varias líneas.
+- Con `///` para comentar lo que hace un método especifico.
+
+# Refactorizar
+Es importante refactorizar nuestro código para mantenerlo ordenado.
+
+El constructor de una clase tiene que ser tan rápido como sea posible, tiene que estar desconectado de cualquier cosa que implique entrada y salida.
+
+# Clases estáticas
+Una clase estática no permite crear nuevas instancias, la clase por si misma funciona como un objeto.
+
+
 
