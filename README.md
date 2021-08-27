@@ -133,5 +133,9 @@ El constructor de una clase tiene que ser tan rápido como sea posible, tiene qu
 # Clases estáticas
 Una clase estática no permite crear nuevas instancias, la clase por si misma funciona como un objeto.
 
+# Generación de datos aleatorios
+Si un método tiene más de 50 líneas significa que está mal diseñado, cada método debe tener una sola responsabilidad. Es por eso por lo que vamos a separar en distintos métodos la carga de datos de nuestro proyecto.
+
+
 
 
