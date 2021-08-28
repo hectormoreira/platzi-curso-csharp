@@ -1,4 +1,10 @@
-# Fundamentos de C# con .NET Core 2018
+# C# con .NET Core
+## Notas del [Curso de C# con .Net Core](https://platzi.com/clases/c-sharp/)
+
+
+
+
+## ⬇ Notas del curso [Fundamentos De C# con .Net Core](https://platzi.com/clases/fundamentos-csharp-2018/)
 
 ## Comandos Dotnet
 - `dotnet new` Nuevo proyecto

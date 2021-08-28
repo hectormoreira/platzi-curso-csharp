@@ -23,6 +23,7 @@ namespace CoreEscuela.App
 
         private void CargarEvaluaciones()
         {
+            
             foreach (var curso in Escuela.Cursos)
             {
                 foreach (var asignatura in curso.Asignaturas)
