@@ -18,18 +18,32 @@ namespace CoreEscuela.App
             Escuela = new Escuela("Platzi Academy", 2012, TiposEscuela.Secundaria, pais: "Colombia", ciudad: "Bogotá");
             CargarCursos();
             CargarAsignaturas();
-
-            foreach (var curso in Escuela.Cursos)
-            {
-                curso.Alumnos.AddRange(CargarAlumnos());
-            }
-            
             CargarEvaluaciones();
         }
 
         private void CargarEvaluaciones()
         {
-            throw new NotImplementedException();
+            foreach (var curso in Escuela.Cursos)
+            {
+                foreach (var asignatura in curso.Asignaturas)
+                {
+                    foreach (var alumno in curso.Alumnos)
+                    {
+                        var rnd = new Random(System.Environment.TickCount);
+                        for (int i = 0; i < 5; i++)
+                        {
+                            var evaluacion = new Evaluacion
+                            {
+                                Asignatura = asignatura,
+                                Nombre = $"{asignatura.Nombre} Ev#{i + 1}",
+                                Nota = (float)(5 * rnd.NextDouble()),
+                                Alumno = alumno
+                            };
+                            alumno.Evaluaciones.Add(evaluacion);
+                        }
+                    }
+                }
+            }
         }
 
         private void CargarAsignaturas()
@@ -42,11 +56,11 @@ namespace CoreEscuela.App
                     new Asignatura{Nombre="Castellano"},
                     new Asignatura{Nombre="Ciencias Naturales"}
                 };
-                curso.Asignaturas.AddRange(listaAsignaturas);
+                curso.Asignaturas = listaAsignaturas;
             }
         }
 
-        private IEnumerable<Alumno> CargarAlumnos()
+        private List<Alumno> GenerarAlumnosAlAzar(int cantidad)
         {
             string[] nombre1 = { "Alba", "Felipa", "Eusebio", "Farid", "Donald", "Alvaro", "Nicolás" };
             string[] apellido1 = { "Ruiz", "Sarmiento", "Uribe", "Maduro", "Trump", "Toledo", "Herrera" };
@@ -56,8 +70,8 @@ namespace CoreEscuela.App
                                from n2 in nombre2
                                from a1 in apellido1
                                select new Alumno { Nombre = $"{n1} {n2} {a1}" };
-            
-            return listaAlumnos;
+
+            return listaAlumnos.OrderBy((al) => al.UniqueId).Take(cantidad).ToList();
         }
 
         private void CargarCursos()
@@ -69,6 +83,12 @@ namespace CoreEscuela.App
                 new Curso(){ Nombre = "401", Jornada = TiposJornada.Tarde },
                 new Curso(){ Nombre = "501", Jornada = TiposJornada.Tarde },
             };
+            Random rnd = new Random();
+            foreach (var curso in Escuela.Cursos)
+            {
+                int cantidadRandom = rnd.Next(5, 20);
+                curso.Alumnos = GenerarAlumnosAlAzar(cantidadRandom);
+            }
         }
     }
 }
