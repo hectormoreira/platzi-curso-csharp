@@ -1,6 +1,14 @@
 # C# con .NET Core
 ## Notas del [Curso de C# con .Net Core](https://platzi.com/clases/c-sharp/)
 
+## Herencia
+La herencia en la programación funciona del mismo modo que en la vida real, un padre puede dejar en herencia ciertas características y atributos a sus hijos.
+
+Aprendamos a utilizar la herencia en nuestro código y veamos como una clase hijo puede heredar ciertas características o funciones de la clase padre, también veremos que estas funciones o métodos heredados se pueden sobrescribir.
+
+Al momento de programar nuestras clases padre podemos usar la palabra clave `abstract` para que dicha clase solamente pueda ser heredada, pero nunca instanciada. Por el contrario, tenemos la palabra clave `sealed` permite generar instancias de la clase, pero no permite heredarla.
+
+
 
 
 
