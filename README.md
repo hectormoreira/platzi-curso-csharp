@@ -8,6 +8,16 @@ Aprendamos a utilizar la herencia en nuestro código y veamos como una clase hij
 
 Al momento de programar nuestras clases padre podemos usar la palabra clave `abstract` para que dicha clase solamente pueda ser heredada, pero nunca instanciada. Por el contrario, tenemos la palabra clave `sealed` permite generar instancias de la clase, pero no permite heredarla.
 
+## Polimorfismo
+En polimorfismo un objeto hijo que hereda de una clase padre puede ser tratado como un objeto padre, pero al ser convertido en objeto padre ya no se podrá acceder a los atributos del objeto hijo. Por otro lado, un objeto padre no puede tratarse como un objeto hijo a menos que el objeto padre estuviera guardando un objeto hijo.
+
+
+
+
+
+
+
+
 
 
 
