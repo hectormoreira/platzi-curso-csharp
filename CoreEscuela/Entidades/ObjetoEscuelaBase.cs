@@ -2,7 +2,7 @@ using System;
 
 namespace CoreEscuela.Entidades
 {
-    public abstract class ObjetoEscuelaBase
+    public class ObjetoEscuelaBase
     {
         public ObjetoEscuelaBase()
         {

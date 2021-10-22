@@ -23,7 +23,7 @@ namespace CoreEscuela.App
 
         private void CargarEvaluaciones()
         {
-            
+
             foreach (var curso in Escuela.Cursos)
             {
                 foreach (var asignatura in curso.Asignaturas)
@@ -45,6 +45,25 @@ namespace CoreEscuela.App
                     }
                 }
             }
+        }
+
+        public List<ObjetoEscuelaBase> GetObjetosEscuela()
+        {
+            var listObj = new List<ObjetoEscuelaBase>();
+            listObj.Add(Escuela);
+            listObj.AddRange(Escuela.Cursos);
+
+            foreach (var curso in Escuela.Cursos)
+            {
+                listObj.AddRange(curso.Asignaturas);
+                listObj.AddRange(curso.Alumnos);
+
+                foreach (var alumno in curso.Alumnos)
+                {
+                    listObj.AddRange(alumno.Evaluaciones);
+                }
+            }
+            return listObj;
         }
 
         private void CargarAsignaturas()

@@ -12,8 +12,24 @@ namespace CoreEscuela
             var engine = new EscuelaEngine();
             engine.Inicializar();
             Printer.WriteTitle("Bienvenidos a la escuela");
-            Printer.Beep();
-            ImprimirCursosEscuela(engine.Escuela);
+            // Printer.Beep();
+            // ImprimirCursosEscuela(engine.Escuela);
+
+
+            // ob = evaluacion;
+
+            // if (ob is Alumno)
+            // {
+            //     Alumno alumnoRecuperado = (Alumno)ob;
+            // }
+
+            // Alumno alumnoRecuperado2 = ob as Alumno;
+
+            var listaObj = engine.GetObjetosEscuela();
+
+
+
+
         }
 
         private static void ImprimirCursosEscuela(Escuela escuela)
@@ -32,7 +48,7 @@ namespace CoreEscuela
             {
                 WriteLine("No existe escuela o no existen cursos");
             }
-            Printer.DibujarLinea(20);
+            Printer.DrawLine(20);
         }
 
         private static void ImprimirAlumnos(string cursoName, List<Alumno> alumnos)
