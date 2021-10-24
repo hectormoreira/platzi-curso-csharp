@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using CoreEscuela.App;
 using CoreEscuela.Entidades;
 using CoreEscuela.Util;
@@ -26,6 +27,13 @@ namespace CoreEscuela
             // Alumno alumnoRecuperado2 = ob as Alumno;
 
             var listaObj = engine.GetObjetosEscuela();
+
+            var listaILugar = from obj in listaObj
+                                where obj is ILugar
+                                select (ILugar)obj;
+
+
+            // engine.Escuela.LimpiarLugar();
 
 
 

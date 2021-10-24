@@ -25,6 +25,21 @@ En C# podemos realizar validaciones sobre el tipo de objeto que estamos manejand
 - **is**, para verificar si un objeto es de un tipo en específico.
 - **as**, para tratar un objeto como un tipo específico, en caso de no poder convertir el objeto entonces va a asignar un valor null.
 
+## Utilizando ToString para mejorar la depuración
+Vamos a sobrescribir el método ToString para mejorar la depuración de nuestro proyecto. Gracias a la herencia podemos sobrescribir el método en nuestra clase padre y todas sus clases hijas también tendrán sobrescrito el método.
+
+## Implementación de interfaces - Etapa 6
+En C# no existe la herencia múltiple, sin embargo, esto no es una limitante para hacer que un objeto se vea como otros objetos diferentes ya que podemos recurrir al uso de interfaces.
+
+Una interfaz es la definición de la estructura de un objeto. Las interfaces las podemos tomar como contratos en las que obligamos a que los objetos cumplan determinadas características.
+
+## Uso de interfaces
+Desde el punto de vista de la programación orientada a objetos cualquier objeto puede ser visto como una interfaz.
+
+Haciendo uso de Linq vamos a seleccionar de nuestra lista de objetos todos los objetos y les haremos casting con ILugar. Si no declaramos que nos retorne sólo los objetos que sean de tipo ILugar, entonces el programa al realizar el casting va a causar errores silenciosos.
+
+
+
 
 
 
