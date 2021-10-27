@@ -38,6 +38,10 @@ Desde el punto de vista de la programación orientada a objetos cualquier objeto
 
 Haciendo uso de Linq vamos a seleccionar de nuestra lista de objetos todos los objetos y les haremos casting con ILugar. Si no declaramos que nos retorne sólo los objetos que sean de tipo ILugar, entonces el programa al realizar el casting va a causar errores silenciosos.
 
+## Creación y uso de regiones
+Una clase con muchas responsabilidades será un indicio de que nuestro código no está totalmente optimizado.
+
+Las regiones no cambian a nivel de programación, pero si en la utilización del IDE. Situando código entre #region y #endregionel IDE va a ser capaz de colapsar todo ese bloque de código mejorando la legibilidad de este.
 
 
 
