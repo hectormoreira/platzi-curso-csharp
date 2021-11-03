@@ -43,6 +43,12 @@ Una clase con muchas responsabilidades será un indicio de que nuestro código n
 
 Las regiones no cambian a nivel de programación, pero si en la utilización del IDE. Situando código entre #region y #endregionel IDE va a ser capaz de colapsar todo ese bloque de código mejorando la legibilidad de este.
 
+## Parámetros de salida
+Los parámetros opcionales siempre deben ir al último de un método.
+Un parámetro de salida se debe marcar con la palabra out, dentro de la función cada parámetro de salida debe ser asignado para funcionar y poder regresar un valor.
+
+## Probando funcionalidades de parámetros de salida
+Si en nuestra función solamente necesitamos el primer parámetro de salida no podemos simplemente borrar los otros parámetros ya que esto va a lanzar un error, lo que debemos hacer es mandar una variable dummy en los siguientes parámetros de salida y listo.
 
 
 

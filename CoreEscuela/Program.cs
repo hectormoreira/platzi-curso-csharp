@@ -3,7 +3,9 @@ using System.Linq;
 using CoreEscuela.App;
 using CoreEscuela.Entidades;
 using CoreEscuela.Util;
+
 using static System.Console;
+
 namespace CoreEscuela
 {
     class Program
@@ -13,31 +15,22 @@ namespace CoreEscuela
             var engine = new EscuelaEngine();
             engine.Inicializar();
             Printer.WriteTitle("Bienvenidos a la escuela");
+
             // Printer.Beep();
             // ImprimirCursosEscuela(engine.Escuela);
-
-
             // ob = evaluacion;
-
             // if (ob is Alumno)
             // {
             //     Alumno alumnoRecuperado = (Alumno)ob;
             // }
-
             // Alumno alumnoRecuperado2 = ob as Alumno;
-
-            var listaObj = engine.GetObjetosEscuela();
-
-            var listaILugar = from obj in listaObj
-                                where obj is ILugar
-                                select (ILugar)obj;
-
-
-            // engine.Escuela.LimpiarLugar();
-
-
-
-
+            int dummy = 0;
+            var listaObj =
+                engine
+                    .GetObjetosEscuela(out int conteoEvaluaciones,
+                    out dummy,
+                    out dummy,
+                    out dummy);
         }
 
         private static void ImprimirCursosEscuela(Escuela escuela)
@@ -48,7 +41,8 @@ namespace CoreEscuela
             {
                 foreach (var curso in escuela.Cursos)
                 {
-                    Printer.WriteTitle($"Nombre {curso.Nombre  }, Id  {curso.UniqueId}");
+                    Printer
+                        .WriteTitle($"Nombre {curso.Nombre}, Id  {curso.UniqueId}");
                     ImprimirAlumnos(curso.Nombre, curso.Alumnos);
                 }
             }
@@ -59,7 +53,10 @@ namespace CoreEscuela
             Printer.DrawLine(20);
         }
 
-        private static void ImprimirAlumnos(string cursoName, List<Alumno> alumnos)
+        private static void ImprimirAlumnos(
+            string cursoName,
+            List<Alumno> alumnos
+        )
         {
             Printer.WriteTitle($"Alumnos del curso {cursoName}");
 
@@ -70,13 +67,17 @@ namespace CoreEscuela
             }
         }
 
-        private static void ImprimirEvaluacionesAlumno(string nombre, List<Evaluacion> evaluaciones)
+        private static void ImprimirEvaluacionesAlumno(
+            string nombre,
+            List<Evaluacion> evaluaciones
+        )
         {
             Printer.WriteTitle($"Evaluacion del alumno {nombre}");
 
             foreach (var evaluacion in evaluaciones)
             {
-                WriteLine($"Evaluacion de: {evaluacion.Nombre} - Nota: {evaluacion.Nota.ToString("0.00")}");
+                WriteLine($"Evaluacion de: {evaluacion.Nombre} - Nota: {
+                    evaluacion.Nota.ToString("0.00")}");
             }
         }
     }
