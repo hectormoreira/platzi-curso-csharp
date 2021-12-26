@@ -16,21 +16,43 @@ namespace CoreEscuela
             engine.Inicializar();
             Printer.WriteTitle("Bienvenidos a la escuela");
 
-            // Printer.Beep();
-            // ImprimirCursosEscuela(engine.Escuela);
+            
+            //ImprimirCursosEscuela(engine.Escuela);
+
+
+
             // ob = evaluacion;
             // if (ob is Alumno)
             // {
             //     Alumno alumnoRecuperado = (Alumno)ob;
             // }
             // Alumno alumnoRecuperado2 = ob as Alumno;
-            int dummy = 0;
-            var listaObj =
-                engine
-                    .GetObjetosEscuela(out int conteoEvaluaciones,
-                    out dummy,
-                    out dummy,
-                    out dummy);
+            // int dummy = 0;
+            // var listaObj =
+            //     engine
+            //         .GetObjetosEscuela(out int conteoEvaluaciones,
+            //         out dummy,
+            //         out dummy,
+            //         out dummy);
+
+
+            Dictionary<int, string> diccionario = new Dictionary<int, string>();
+            diccionario.Add(10, "Lorem");
+            diccionario.Add(11, "Ipsum");
+
+            foreach (var item in diccionario)
+            {
+                WriteLine($"Key: {item.Key} - Value: {item.Value} ");
+            }
+
+            
+
+
+
+
+
+
+
         }
 
         private static void ImprimirCursosEscuela(Escuela escuela)
@@ -76,8 +98,7 @@ namespace CoreEscuela
 
             foreach (var evaluacion in evaluaciones)
             {
-                WriteLine($"Evaluacion de: {evaluacion.Nombre} - Nota: {
-                    evaluacion.Nota.ToString("0.00")}");
+                WriteLine($"Evaluacion de: {evaluacion.Nombre} - Nota: {evaluacion.Nota.ToString("0.00")}");
             }
         }
     }

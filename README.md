@@ -50,6 +50,27 @@ Un parámetro de salida se debe marcar con la palabra out, dentro de la función
 ## Probando funcionalidades de parámetros de salida
 Si en nuestra función solamente necesitamos el primer parámetro de salida no podemos simplemente borrar los otros parámetros ya que esto va a lanzar un error, lo que debemos hacer es mandar una variable dummy en los siguientes parámetros de salida y listo.
 
+## Sobrecargas de métodos
+Vamos a optimizar nuestro código, para ello vamos a sobrecargar nuestro método GetObjetoEscuela para los casos donde necesitemos menos parámetros de salida.
+
+## Listas de solo Lectura
+Nuestro método GetObjetoEscuela nos regresa una lista que debe utilizarse solo para lectura de objetos, sin embargo, al regresar un objeto tipo List es posible para el desarrollador añadir nuevos objetos. Podemos solucionar esto cambiando el tipo List por IReadOnlyList.
+
+Recuerda que una buena practica para las listas de datos que son de manera publica es regresar un tipo de lista genérico, como IEnumerable y en los casos donde serán de solo lectura regresar un tipo IReadOnlyList.
+
+## Diccionario Polimórfico
+El objeto tipo Dictionary necesita dos parámetros, el primero es la llave y el segundo es el contenido. Haciendo que la instancia de un Dictionary quede de la siguiente forma:
+
+``` c#
+Dictionary<int, string> diccionario = new Dictionary<int, string>();
+```
+
+Las llaves en los diccionarios son únicas.
+
+## Uso de numeraciones en diccionario
+Teniendo un diccionario que sus llaves sean de tipo string vamos a encontrarnos con un problema al momento de programar: podríamos equivocarnos en el nombre de la llave escribiendo “cursos” en lugar de “Cursos”, esto ocasionaría que estemos accediendo a un lugar distinto del diccionario.
+
+Para solucionar nuestro problema podemos hacer uso de variables constantes, pero solamente funcionaria dentro del fragmento de código actual. Una mejor solución seria hacer uso de un enum con los distintos nombres de las llaves y cambiar el tipo de la llave del diccionario de string a enum.
 
 
 
